@@ -2,7 +2,7 @@ from django.views.generic import TemplateView
 from .forms import LoginForm, UserRegistration
 from django.http.response import HttpResponse
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
 
 
 class Index(TemplateView):
@@ -24,7 +24,7 @@ class LoginView(TemplateView):
             if user:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponse('Login successfully!')
+                    return redirect('main-app:index')
                 else:
                     form.add_error('username', error='Account disabled')
             else:
@@ -38,7 +38,7 @@ class LogoutView(TemplateView):
     def get(self, request):
         if request.user.is_authenticated:
             logout(request)
-        return HttpResponse('Logout successfully!')
+        return redirect('main-app:index')
 
 
 class RegisterView(TemplateView):
@@ -54,6 +54,6 @@ class RegisterView(TemplateView):
             new_user = form.save(commit=False)
             new_user.set_password(form.cleaned_data['password2'])
             new_user.save()
-            return HttpResponse('Registed!')
+            return redirect('main-app:index')
         else:
             return self.render_to_response({'form': form})

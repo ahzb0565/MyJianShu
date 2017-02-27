@@ -1,0 +1,26 @@
+{
+  "name": "mockjianshu",
+  "version": "1.0.0",
+  "description": "For bob to learn",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahzb0565/MyJianShu.git"
+  },
+  "author": "Bob",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahzb0565/MyJianShu/issues"
+  },
+  "homepage": "https://github.com/ahzb0565/MyJianShu#readme",
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.1.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

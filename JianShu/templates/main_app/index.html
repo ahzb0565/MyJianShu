@@ -6,5 +6,10 @@
 </head>
 <body>
     <p>Hello Bob</p>
+    {% if user.is_authenticated %}
+        <p>user {{ request.user }} signed in</p>
+    {% else %}
+        <p>Please <a href="{% url 'main-app:login' %}">Login</a></p>
+    {% endif %}
 </body>
 </html>
