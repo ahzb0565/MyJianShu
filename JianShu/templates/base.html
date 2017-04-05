@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="{% static "lib/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+    {% block title %}
+    {% endblock %}
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Jianshu-Bob</a>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    {% block content %}
+    {% endblock %}
+</div>
+<script src="{% static "lib/jquery/dist/jquery.min.js" %}"></script>
+<script src="{% static "lib/bootstrap/dist/js/bootstrap.min.js" %}"></script>
+</body>
+</html>

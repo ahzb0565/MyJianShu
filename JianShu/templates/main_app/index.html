@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Jian Shu Index</title>
-</head>
-<body>
+{% extends  "base.html" %}
+
+{% block title %}
+<title>Index</title>
+{% endblock %}
+
+{% block content %}
     <p>Hello Bob</p>
     {% if user.is_authenticated %}
         <p>user {{ request.user }} signed in</p>
     {% else %}
         <p>Please <a href="{% url 'main-app:login' %}">Login</a></p>
     {% endif %}
-</body>
-</html>
+{% endblock %}
