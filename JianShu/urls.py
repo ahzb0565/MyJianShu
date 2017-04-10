@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin, auth
-from JianShu.apps.main_app import urls
+from JianShu.apps.main_app import urls as main_urls
+from JianShu.apps.api import urls as api_urls
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'', include(urls, namespace='main-app')),
+    url(r'', include(main_urls, namespace='main-app')),
+    url(r'^api/', include(api_urls, namespace='api')),
 ]

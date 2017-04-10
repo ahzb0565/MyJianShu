@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'JianShu.apps.main_app',
+    'JianShu.apps.api',
     'rest_framework',
 ]
 
